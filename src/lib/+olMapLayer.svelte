@@ -12,7 +12,7 @@
 	let ss = $state([]);
 	$effect(async () => {
 		console.log(' map svvelte', landpads);
-		ss = await landpads?.filter((t) => t.status !== '');
+		ss = landpads;
 	});
 	onMount(async () => {
 		map = new Map({

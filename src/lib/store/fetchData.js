@@ -1,6 +1,6 @@
 
 export async function fetchData(url) {
-    let baseURL = import.meta.env.VITE_BASE_URL + url;
+    let baseURL = 'https://api.spacexdata.com/v3' + url;
     try {
       const response = await fetch(baseURL);
       if (!response.ok) {

@@ -15,7 +15,12 @@
 	onMount(() => {
 		get(SPACEX_API.landpads());
 	});
-	let filteredData = $state(null);
+
+	const filteredLandpads = $derived(() => {
+		return selectedStatus
+			? $apiData.filter((landpad) => landpad.status === selectedStatus)
+			: $apiData;
+	});
 	const columns = [
 		{ label: 'FULL NAME', key: 'full_name' },
 		{ label: 'LOCATION NAME', key: 'location.name' },
@@ -65,7 +70,6 @@
 										items={statusList}
 										bind:value={selectedStatus}
 										let:item
-										onchange={() => handleStatus(selectedStatus)}
 									>
 										<option value={item.value}>{item.name}</option>
 									</Select>
@@ -73,17 +77,17 @@
 							</div>
 						</div>
 					</div>
-					<DataTable landpads={filteredData || $apiData} {columns} />
+					<DataTable landpads={filteredLandpads()} {columns} />
 				{:else}
 					<p>No data available.</p>
 				{/if}
 			</div>
 
 			<div class="col-span-1 pl-5">
-				<OlMapLayer landpads={filteredData || $apiData} />
+				<OlMapLayer landpads={filteredLandpads()} />
 
 				{#if !$isLoading}
-					<DonutChart landpads={filteredData || $apiData} />
+					<DonutChart landpads={filteredLandpads()} />
 				{/if}
 			</div>
 		</div>

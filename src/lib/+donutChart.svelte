@@ -1,7 +1,6 @@
 <script>
 	import { Card, Chart, WidgetPlaceholder } from 'flowbite-svelte';
 	let { landpads } = $props();
-	console.log(landpads);
 	let options = $state({});
 	let labels = $derived(() => (landpads?.length ? landpads.map((pad) => pad.full_name) : []));
 

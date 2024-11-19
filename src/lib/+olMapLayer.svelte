@@ -7,13 +7,9 @@
 	import View from 'ol/View';
 	import { onMount } from 'svelte';
 	import Mark from './components/mark.svelte';
-	let { landpads } = $props();
+	let { landpads = $bindable() } = $props();
 	let map = $state();
-	let ss = $state([]);
-	$effect(async () => {
-		console.log(' map svvelte', landpads);
-		ss = landpads;
-	});
+	$effect(() => {});
 	onMount(async () => {
 		map = new Map({
 			target: 'map',
@@ -42,7 +38,7 @@
 	</div>
 	<div id="map" class="h-[255px] w-full"></div>
 </Card>
-{#each ss as landpad}
+{#each landpads as landpad}
 	{#key map}
 		<Mark {landpad} {map} />
 	{/key}

@@ -1,58 +1,36 @@
-# create-svelte
+# 🌟 SvelteKit Feature Showcase
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project demonstrates how to build interactive UI features using **SvelteKit**. It includes dynamic list rendering, interactive map integration with **OpenLayers**, and data visualization with a **Donut Chart**.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## 🚀 Features
 
-## Creating a project
+### ✅ List Implementation
+A reactive and efficient list built using SvelteKit's powerful reactivity system and component architecture. It supports dynamic updates and renders seamlessly.
 
-If you're seeing this, you've probably already done this step. Congrats!
+### 🗺️ Map with OpenLayers
+An interactive map powered by [OpenLayers](https://openlayers.org/), featuring:
+- Pan and zoom functionality
+- Marker placement
+- Smooth rendering for large datasets
 
-```bash
-# create a new project in the current directory
-npx sv create
+### 📊 Donut Chart
+A visually appealing and responsive donut chart built with a charting library (e.g., Chart.js or ApexCharts), perfect for visualizing proportions and data distribution.
 
-# create a new project in my-app
-npx sv create my-app
-```
+---
 
-## Developing
+## 🛠️ Tech Stack
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- **SvelteKit** – Web framework for building fast, modern web apps.
+- **OpenLayers** – Open-source JavaScript library for maps.
+- **Charting Library** – (e.g., Chart.js, ApexCharts) for rendering the donut chart.
 
-```bash
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## 📦 Installation
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
+Clone the repository and install dependencies:
 
 ```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+git clone https://github.com/your-username/sveltekit-feature-showcase.git
+cd sveltekit-feature-showcase
+npm install
